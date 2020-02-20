@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ['install']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/cloud-report-sample:latest', '.']
+images: [
+  'gcr.io/$PROJECT_ID/cloud-report-sample:latest']

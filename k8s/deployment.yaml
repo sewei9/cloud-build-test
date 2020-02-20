@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: linkedin-learning
+  name: linkedin-learning
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: linkedin-learning
+  template:
+    metadata:
+      labels:
+        run: linkedin-learning
+    spec:
+      containers:
+      - image: gcr.io/k8s-linkedin/linkedin-learning:latest
+        name: linkedin-learning
+        ports:
+        - containerPort: 80

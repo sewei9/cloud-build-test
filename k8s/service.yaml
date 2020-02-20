@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: linkedin-learning
+spec:
+  selector:
+     run: linkedin-learning
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
